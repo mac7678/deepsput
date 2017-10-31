@@ -16,12 +16,10 @@ from bs4 import BeautifulSoup as bs
 import urllib.request
 import io
 import os
-
-# Image manipulation.
 import PIL.Image
 from scipy.ndimage.filters import gaussian_filter
 
-## Code from the excellent tutorial ...
+## Most code  for this script from the excellent tutorial ...
 ## https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/14_DeepDream.ipynb
 import inception5h
 #inception5h.maybe_download() ... Important: uncomment this to download inception model
@@ -470,9 +468,10 @@ for x, y in zip(link, filenames):
     #                 num_repeats=4, blend=0.2)
     save_image(img_result, filename=os.curdir + '/images/' + y)
     
-    
-link = 'http://www.sputnikmusic.com/album/177963/Catapilla-Changes/'
-filename = 'catapilla_changes.jpg'
+## Code Chunk to find album art in sputnikmusic, load it, and "deepdream" it,
+    # run from the next line to the end
+link = 'http://www.sputnikmusic.com/album/177963/Catapilla-Changes/' # set album link here
+filename = 'catapilla_changes.jpg' # set name of file to write in the /images/ folder
 link = find_sput_image(link, find = True)
 image = load_image(filename=link)
 layer_tensor = randomize_layer(model)
@@ -485,3 +484,4 @@ img_result = recursive_optimize(layer_tensor=layer_tensor, image=image,
 #                 num_iterations=10, step_size=3.0, rescale_factor=0.7,
 #                 num_repeats=4, blend=0.2)
 save_image(img_result, filename=os.curdir + '/images/' + filename)
+## End Code CHunk
