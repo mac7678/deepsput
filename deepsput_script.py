@@ -356,8 +356,10 @@ def find_sput_image(link, find = True):
         url = requests.get(link)
         soup = bs(url.text, "lxml")
         for x, img in enumerate(soup.findAll('img')):
-            if '/images/albums/' in img.get('src'):
-                out_link = 'http://www.sputnikmusic.com' + img.get('src')
+            if 'images/albums/' in img.get('src'):
+                out_link = 'http://www.sputnikmusic.com/' + img.get('src')
+                if out_link.endswith('-thumbl'):
+                    out_link = out_link.split('-thumbl')[0]
                 break
         print("image link = {}".format(out_link))
         
