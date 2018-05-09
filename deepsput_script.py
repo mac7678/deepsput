@@ -21,6 +21,7 @@ from scipy.ndimage.filters import gaussian_filter
 
 ## Most code  for this script from the excellent tutorial ...
 ## https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/14_DeepDream.ipynb
+## license here: https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/LICENSE
 import inception5h
 #inception5h.maybe_download() ... Important: uncomment this to download inception model
 # it's ~ 50 mb's so, do it only if you want it
