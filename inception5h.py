@@ -21,7 +21,7 @@
 #
 # https://github.com/Hvass-Labs/TensorFlow-Tutorials
 #
-# Published under the MIT License. See the file LICENSE for details.
+# Published under the MIT License. See here (https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/LICENSE) for details.
 #
 # Copyright 2016 by Magnus Erik Hvass Pedersen
 #
